@@ -1,0 +1,7 @@
+{
+    "/backend/*": {
+        "target": "http://backendcontainer:8080",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

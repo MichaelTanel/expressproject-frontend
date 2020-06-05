@@ -21,6 +21,8 @@ export class RegistrationComponent implements OnInit {
     console.log('hello in register');
     this.registrationService.register(this.email, this.pass, this.confirmPass).subscribe(result => {
       console.log('result', result);
+    }, (err) => {
+      console.log('error', err);
     });
   }
 }
