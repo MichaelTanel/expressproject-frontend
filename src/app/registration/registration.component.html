@@ -4,19 +4,19 @@
             <mat-card-title>Register</mat-card-title>
         </mat-card-header>
 
-        <form class="example-form">
+        <form (ngSubmit)="onSubmit()" #registrationForm="ngForm" class="example-form">
             <mat-card-content>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Email">
+                    <input matInput placeholder="Email" required [(ngModel)]="email" name="email">
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password">
+                    <input matInput placeholder="Password" type="password" [(ngModel)]="pass" name="pass" required>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Confirm Password">
+                    <input matInput placeholder="Confirm Password" type="password" ([ngModel])="confirmPass" name="confirmPass" required>
                 </mat-form-field>
             </mat-card-content>
-            <button mat-stroked-button color="accent" class="btn-block">Register</button>
+            <button mat-stroked-button color="accent" class="btn-block" type="submit" [disabled]="!registrationForm.form.valid">Register</button>
         </form>
     </mat-card>
 </div>
